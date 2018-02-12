@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>가맹점 조회</title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div class="container" th:object="${company}">
+		<h1>가맹점 조회</h1>
+		<form>
+			<div class="form-group has-feedback">
+				<hr/>
+				<h4 style="font-weight: bold">가맹점 정보</h4>
+				<div class="form-group has-feedback">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>가맹점명</th>
+								<th>서비스명</th>
+								<th>가맹점 등록일자</th>
+								<th>가맹점 오픈일자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td th:text="*{companyName}">가맹점명입니다.</td>
+								<td th:text="*{serviceName}">서비스명입니다.</td>
+								<td th:text="*{regDate}">가맹점 등록일자입니다.</td>
+								<td th:text="*{companyOpenDate}">가맹점 오픈일자입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="form-group has-feedback">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>과세구분</th>
+								<th>결제모드</th>
+								<th>개발언어</th>
+								<th>서비스 상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td th:text="*{tax}">과세구분입니다.</td>
+								<td th:text="*{payMode}">결제모드입니다.</td>
+								<td th:text="*{language}">개발언어입니다.</td>
+								<td th:text="*{serviceStatus}">서비스 상태입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="form-group has-feedback">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>서비스 방식</th>
+								<th>페이코 연동 종류</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td th:text="*{serviceMethod}">서비스 방식입니다.</td>
+								<td th:text="*{paycoKinds}">페이코 연동 종류입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<hr/>
+				<h4 style="font-weight: bold">담당자</h4>
+				<div class="form-group has-feedback">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>담당자(정)</th>
+								<th>담당자(부)</th>
+								<th>영업담당자(NE)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td th:text="*{managerMain}">담당자(정)입니다.</td>
+								<td th:text="*{managerVice}">담당자(부)입니다.</td>
+								<td th:text="*{managerNE}">영업담당자(NE)입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<hr />
+				<h4 style="font-weight: bold">URL</h4>
+				<div class="form-group has-feedback">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>URL</th>
+								<th>호출방식</th>
+								<th>iFrame</th>
+								<th>테스트 ID</th>
+								<th>테스트 PW</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td th:text="*{serviceUrl}">URL입니다.</td>
+								<td th:text="*{serviceMode}">호출방식입니다.</td>
+								<td th:text="*{iFrame}">iFrame여부입니다.</td>
+								<td th:text="*{testID}">test ID입니다.</td>
+								<td th:text="*{testPW}">test PW입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<hr />
+				<h4 style="font-weight: bold">ADMIN</h4>
+				<div class="form-group has-feedback">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>sellerKey</th>
+								<th>cpId</th>
+								<th>productId</th>
+								<th>deliveryId</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td th:text="*{sellerKey}">sellerKey입니다.</td>
+								<td th:text="*{cpId}">cpId입니다.</td>
+								<td th:text="*{productId}">productId입니다.</td>
+								<td th:text="*{deliveryId}">deliveryId입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<hr />
+				<h4 style="font-weight: bold">메모</h4>
+				<div class="form-group has-feedback">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>구분</th>
+								<th>메모</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td th:text="*{memoType}">memoType입니다.</td>
+								<td th:text="*{memoContent}">메모내용입니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div>
+					<a th:href="@{/companys}" class="btn btn-default" role="button">목록</a>
+					<a th:href="@{/companys}" class="btn btn-default" role="button">수정</a>
+					<a th:href="@{/companys}" class="btn btn-default" role="button">삭제</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
